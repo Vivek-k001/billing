@@ -77,10 +77,10 @@ const Login = () => {
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <div className="input-wrapper">
-                <svg className="input-icon" viewBox="0 0 24 24" fill="none">
+               {/* <svg className="input-icon" viewBox="0 0 24 24" fill="none">
                   <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
+                </svg> */}
                 <input
                   id="username"
                   type="text"
@@ -96,10 +96,10 @@ const Login = () => {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <div className="input-wrapper password-wrapper">
-                <svg className="input-icon" viewBox="0 0 24 24" fill="none">
+                {/* <svg className="input-icon" viewBox="0 0 24 24" fill="none">
                   <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="2"/>
                   <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
+                </svg> */}
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
