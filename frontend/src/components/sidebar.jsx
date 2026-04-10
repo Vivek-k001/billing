@@ -19,10 +19,10 @@ const Sidebar = () => {
   };
 
   const navItems = [
-    { label: "Dashboard",      icon: <LayoutDashboard size={17}/>, path: "/dashboard",      adminOnly: true  },
-    { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice",         adminOnly: false },
-    { label: "Daily Report",   icon: <BarChart2 size={17}/>,       path: "/daily-report",    adminOnly: false },
-    { label: "Monthly Report", icon: <BarChart3 size={17}/>,       path: "/monthly-report",  adminOnly: true  },
+    { label: "Dashboard",      icon: <LayoutDashboard size={17}/>, path: "/dashboard",     adminOnly: true  },
+    { label: "Daily Report",   icon: <BarChart2 size={17}/>,       path: "/daily-report",  adminOnly: false },
+    { label: "Monthly Report", icon: <BarChart3 size={17}/>,       path: "/monthly-report",adminOnly: true  },
+    { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice",       adminOnly: false },
   ];
 
   const handleNav = (path) => {
