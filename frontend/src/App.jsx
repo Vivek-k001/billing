@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
-import StaffDashboard from "./pages/staffDashboard";
+import StaffDashboard from "./pages/staffdashboard";
 import DailyReport from "./pages/dailyReport";
 import MonthlyReport from "./pages/monthlyReport";
 
