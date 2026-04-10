@@ -62,12 +62,19 @@
 .sb-btn:hover  { background: #fce4ec; color: #c00026; }
 .sb-btn.active { background: #fce4ec; color: #c00026; font-weight: 600; }
 
-/* Logout */
+/* Logout — sits right below last nav item */
 .sb-logout {
-  color: #aaa; border-top: 1px solid #f0dfe4;
-  padding-top: 14px; margin-top: auto;
+  color: #e05070;
+  font-weight: 600;
 }
 .sb-logout:hover { background: #fff5f5; color: #c00026; }
+
+/* Thin divider above logout */
+.sb-logout-divider {
+  height: 1px;
+  background: #f0dfe4;
+  margin: 6px 0;
+}
 
 /* Overlay */
 .sb-overlay { display: none; }

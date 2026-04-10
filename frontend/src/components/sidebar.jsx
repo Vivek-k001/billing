@@ -18,12 +18,20 @@ const Sidebar = () => {
     navigate("/");
   };
 
-  const navItems = [
-    { label: "Dashboard",      icon: <LayoutDashboard size={17}/>, path: "/dashboard",     adminOnly: true  },
-    { label: "Daily Report",   icon: <BarChart2 size={17}/>,       path: "/daily-report",  adminOnly: false },
-    { label: "Monthly Report", icon: <BarChart3 size={17}/>,       path: "/monthly-report",adminOnly: true  },
-    { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice",       adminOnly: false },
+  // Separate ordered lists per role — no filtering needed
+  const adminNavItems = [
+    { label: "Dashboard",      icon: <LayoutDashboard size={17}/>, path: "/dashboard"      },
+    { label: "Daily Report",   icon: <BarChart2 size={17}/>,       path: "/daily-report"   },
+    { label: "Monthly Report", icon: <BarChart3 size={17}/>,       path: "/monthly-report" },
+    { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice"        },
   ];
+
+  const staffNavItems = [
+    { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice"        },
+    { label: "Daily Report",   icon: <BarChart2 size={17}/>,       path: "/daily-report"   },
+  ];
+
+  const navItems = isAdmin ? adminNavItems : staffNavItems;
 
   const handleNav = (path) => {
     navigate(path);
@@ -64,22 +72,23 @@ const Sidebar = () => {
         </div>
 
         <nav className="sb-nav">
-          {navItems
-            .filter((item) => !item.adminOnly || isAdmin)
-            .map((item) => (
-              <button key={item.path}
-                className={`sb-btn ${location.pathname === item.path ? "active" : ""}`}
-                onClick={() => handleNav(item.path)}>
-                {item.icon}
-                <span>{item.label}</span>
-              </button>
-            ))}
+          {navItems.map((item) => (
+            <button key={item.path}
+              className={`sb-btn ${location.pathname === item.path ? "active" : ""}`}
+              onClick={() => handleNav(item.path)}>
+              {item.icon}
+              <span>{item.label}</span>
+            </button>
+          ))}
+
+          {/* Logout always right below the last nav button */}
+          <div className="sb-logout-divider" />
+          <button className="sb-btn sb-logout" onClick={handleLogout}>
+            <LogOut size={17} />
+            <span>Logout</span>
+          </button>
         </nav>
 
-        <button className="sb-btn sb-logout" onClick={handleLogout}>
-          <LogOut size={17} />
-          <span>Logout</span>
-        </button>
       </div>
     </>
   );
