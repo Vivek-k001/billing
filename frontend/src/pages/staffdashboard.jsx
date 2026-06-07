@@ -231,12 +231,12 @@ const StaffDashboard = () => {
           <table className="info-table">
             <tbody>
               <tr>
-                <td className="info-cell" style={{width:"50%"}}>Inv. No. : <strong>{invoiceDetails.invNo}</strong></td>
+                <td className="info-cell" colSpan={2}>Inv. No. : <strong>{invoiceDetails.invNo}</strong></td>
                 <td className="info-cell">Date: <strong>{invoiceDetails.date}</strong></td>
               </tr>
-              <tr><td className="info-cell" colSpan={2}>Customer Name: <strong>{invoiceDetails.customerName}</strong></td></tr>
+              <tr><td className="info-cell customer-name-cell" colSpan={3}>Customer Name: <strong>{invoiceDetails.customerName}</strong></td></tr>
               <tr>
-                <td className="info-cell">Area/Location: <strong>{invoiceDetails.location}</strong></td>
+                <td className="info-cell" colSpan={2}>Area/Location: <strong>{invoiceDetails.location}</strong></td>
                 <td className="info-cell">Contact No: <strong>{invoiceDetails.contactNo}</strong></td>
               </tr>
               <tr>
@@ -244,7 +244,7 @@ const StaffDashboard = () => {
                 <td className="info-cell">Model: <strong>{invoiceDetails.model}</strong></td>
                 <td className="info-cell">Total Cntr: <strong>{invoiceDetails.totalCntr}</strong></td>
               </tr>
-              <tr><td className="info-cell" colSpan={2}>Contract: <strong>{invoiceDetails.contract}</strong></td></tr>
+              <tr><td className="info-cell" colSpan={3}>Contract: <strong>{invoiceDetails.contract}</strong></td></tr>
             </tbody>
           </table>
           <table className="ref-table">

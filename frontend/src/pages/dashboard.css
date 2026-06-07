@@ -572,8 +572,9 @@
   .trn-boxes { display: flex; flex: 1; }
   .trn-box { flex: 1; min-width: 0; height: 9mm; border-right: 1px solid #777; display: flex; align-items: center; justify-content: center; font-size: 8pt; }
 
-  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 4mm; }
-  .info-cell  { border: 1px solid #777; padding: 1.3mm 2mm; font-size: 8pt; vertical-align: middle; height: 7mm; }
+  .info-table { width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 4mm; }
+  .info-cell  { border: 1px solid #777; padding: 1.2mm 2mm; font-size: 8pt; vertical-align: top; height: 6.5mm; overflow-wrap: anywhere; }
+  .customer-name-cell { height: 10mm; }
 
   .ref-table { width: 100%; border-collapse: collapse; margin: 2mm 0 7mm; border-top: 2px solid #111; }
   .ref-cell  { border: 1px solid #777; padding: 1.6mm 2mm; width: 33.33%; font-size: 8pt; height: 7mm; }
