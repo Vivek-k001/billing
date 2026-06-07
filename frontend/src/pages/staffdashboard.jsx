@@ -293,7 +293,7 @@ const StaffDashboard = () => {
           <table className="footer-table">
             <tbody>
               <tr>
-                <td className="footer-left" rowSpan={4}><div className="note-line">Note: {invoiceDetails.note}</div></td>
+                <td className="footer-left" rowSpan={2}><div className="note-line">Note: {invoiceDetails.note}</div></td>
                 <td className="footer-label footer-pink">Without VAT</td>
                 <td className="footer-value footer-pink">{subTotal.toFixed(2)}</td>
               </tr>
@@ -302,15 +302,13 @@ const StaffDashboard = () => {
                 <td className="footer-value footer-pink">{totalVat.toFixed(2)}</td>
               </tr>
               <tr>
+                <td className="footer-total-dhs" rowSpan={2}>Total Dhs. <strong>{grandTotal.toFixed(2)}</strong></td>
                 <td className="footer-label footer-pink">Discount</td>
                 <td className="footer-value footer-pink">{invoiceDetails.discount?Number(invoiceDetails.discount).toFixed(2):""}</td>
               </tr>
               <tr>
                 <td className="footer-label footer-pink">G. total</td>
                 <td className="footer-value footer-pink"><strong>{grandTotal.toFixed(2)}</strong></td>
-              </tr>
-              <tr>
-                <td className="footer-total-dhs">Total Dhs. <strong>{grandTotal.toFixed(2)}</strong></td>
               </tr>
             </tbody>
           </table>

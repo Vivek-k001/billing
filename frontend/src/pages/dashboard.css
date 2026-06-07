@@ -602,7 +602,7 @@
   .footer-label { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; width: 23%; font-weight: 600; }
   .footer-value { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; width: 17%; text-align: right; }
   .footer-pink  { background-color: #f7cfe0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .footer-total-dhs { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; font-weight: 700; }
+  .footer-total-dhs { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; font-weight: 700; vertical-align: top; width: 60%; }
 
   .payment-row { display: flex; align-items: center; gap: 17mm; margin-top: 1.5mm; font-size: 8pt; justify-content: center; }
   .payment-desc-label { font-weight: 700; }
