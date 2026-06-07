@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FileText, BarChart2, BarChart3, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
+import { FileText, BarChart2, BarChart3, LayoutDashboard, LogOut, Menu, PackagePlus, X } from "lucide-react";
 import "./sidebar.css";
 
 const Sidebar = () => {
@@ -23,12 +23,14 @@ const Sidebar = () => {
     { label: "Dashboard",      icon: <LayoutDashboard size={17}/>, path: "/dashboard"      },
     { label: "Daily Report",   icon: <BarChart2 size={17}/>,       path: "/daily-report"   },
     { label: "Monthly Report", icon: <BarChart3 size={17}/>,       path: "/monthly-report" },
+    { label: "Update Stock",   icon: <PackagePlus size={17}/>,     path: "/update-stock"   },
     { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice"        },
   ];
 
   const staffNavItems = [
-    { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice"        },
     { label: "Daily Report",   icon: <BarChart2 size={17}/>,       path: "/daily-report"   },
+    { label: "Update Stock",   icon: <PackagePlus size={17}/>,     path: "/update-stock"   },
+    { label: "Invoice Entry",  icon: <FileText size={17}/>,        path: "/invoice"        },
   ];
 
   const navItems = isAdmin ? adminNavItems : staffNavItems;

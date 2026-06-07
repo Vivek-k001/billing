@@ -4,6 +4,7 @@ import Dashboard from "./pages/dashboard";
 import StaffDashboard from "./pages/staffdashboard";
 import DailyReport from "./pages/dailyReport";
 import MonthlyReport from "./pages/monthlyReport";
+import UpdateStock from "./pages/updateStock";
 
 // ── Protected Route ──────────────────────────────────
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -67,6 +68,11 @@ function App() {
         <Route path="/monthly-report" element={
           <ProtectedRoute allowedRoles={["admin"]}>
             <MonthlyReport />
+          </ProtectedRoute>
+        } />
+        <Route path="/update-stock" element={
+          <ProtectedRoute allowedRoles={["admin","staff"]}>
+            <UpdateStock />
           </ProtectedRoute>
         } />
         <Route path="/invoice" element={

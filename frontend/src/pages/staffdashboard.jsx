@@ -5,9 +5,17 @@ import "./dashboard.css";
 
 const EMPTY_ROWS = 13;
 
+const formatDate = (date) => {
+  const d = new Date(date);
+  const day = String(d.getDate()).padStart(2, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const year = d.getFullYear();
+  return `${day}-${month}-${year}`;
+};
+
 const StaffDashboard = () => {
   const [invoiceDetails, setInvoiceDetails] = useState({
-    invNo: "", date: new Date().toISOString().split("T")[0],
+    invNo: "", date: formatDate(new Date()),
     customerName: "", location: "", contactNo: "",
     brandName: "", model: "", totalCntr: "", contract: "",
     customerTrn: "", dnNo: "", dnDate: "", srNo: "", srDate: "",
@@ -79,7 +87,7 @@ const StaffDashboard = () => {
           </div>
           <div className="form-group">
             <label>Date</label>
-            <input type="date" name="date" value={invoiceDetails.date} onChange={handleInputChange}/>
+            <input name="date" value={invoiceDetails.date} onChange={handleInputChange} placeholder="DD-MM-YYYY"/>
           </div>
           <div className="form-group">
             <label>Customer TRN</label>
@@ -118,11 +126,11 @@ const StaffDashboard = () => {
         {/* Reference numbers */}
         <div className="card ref-entry-grid">
           <div className="form-group"><label>D.N No</label><input name="dnNo" value={invoiceDetails.dnNo} onChange={handleInputChange} placeholder="D.N No"/></div>
-          <div className="form-group"><label>D.N Date</label><input type="date" name="dnDate" value={invoiceDetails.dnDate} onChange={handleInputChange}/></div>
+          <div className="form-group"><label>D.N Date</label><input name="dnDate" value={invoiceDetails.dnDate} onChange={handleInputChange} placeholder="DD-MM-YYYY"/></div>
           <div className="form-group"><label>S.R No</label><input name="srNo" value={invoiceDetails.srNo} onChange={handleInputChange} placeholder="S.R No"/></div>
-          <div className="form-group"><label>S.R Date</label><input type="date" name="srDate" value={invoiceDetails.srDate} onChange={handleInputChange}/></div>
+          <div className="form-group"><label>S.R Date</label><input name="srDate" value={invoiceDetails.srDate} onChange={handleInputChange} placeholder="DD-MM-YYYY"/></div>
           <div className="form-group"><label>L.P.O No</label><input name="lpoNo" value={invoiceDetails.lpoNo} onChange={handleInputChange} placeholder="L.P.O No"/></div>
-          <div className="form-group"><label>L.P.O Date</label><input type="date" name="lpoDate" value={invoiceDetails.lpoDate} onChange={handleInputChange}/></div>
+          <div className="form-group"><label>L.P.O Date</label><input name="lpoDate" value={invoiceDetails.lpoDate} onChange={handleInputChange} placeholder="DD-MM-YYYY"/></div>
         </div>
 
         {/* Products */}
@@ -190,15 +198,13 @@ const StaffDashboard = () => {
       {/* ── PRINTABLE A4 ── */}
       <div className="printable-invoice">
         <div className="brand-strip">
-          {["Canon","RICOH","KYOCERa","Panasonic","SHARP","KONICA MINOLTA","TOSHIBA","HP","DEVELOP","brother"].map((b,i)=>(
-            <span key={i}>{b}</span>
-          ))}
+          <img src="/brand.jpg" alt="brand list" className="brand-strip-img"/>
         </div>
         <div className="inv-body">
           <div className="inv-header">
             <div className="inv-logo-block">
               <img src="/logo.png" alt="logo" className="inv-logo"/>
-              <div className="logo-sub"><div>PHOTOCOPIER MAINT</div><div>&amp; STATIONERY EST.</div></div>
+              <div className="logo-sub"></div>
             </div>
             <div className="inv-company-info">
               <div className="company-arabic-name">إيـمـاج اوفـيـس سـيـلـوشـن لاصلاح الالات ومعدات النسخ والقرطاسية</div>
@@ -279,7 +285,7 @@ const StaffDashboard = () => {
               ))}
               {Array.from({length:Math.max(0,EMPTY_ROWS-products.length)}).map((_,i)=>(
                 <tr key={`e-${i}`} className={(products.length+i)%2===1?"row-pink empty-row":"empty-row"}>
-                  <td/><td/><td/><td/><td/><td/>
+                  <td/><td/><td/><td/><td/><td className="col-total"/>
                 </tr>
               ))}
             </tbody>
@@ -288,16 +294,16 @@ const StaffDashboard = () => {
             <tbody>
               <tr>
                 <td className="footer-left" rowSpan={4}><div className="note-line">Note: {invoiceDetails.note}</div></td>
-                <td className="footer-label">Without VAT</td>
-                <td className="footer-value">{subTotal.toFixed(2)}</td>
+                <td className="footer-label footer-pink">Without VAT</td>
+                <td className="footer-value footer-pink">{subTotal.toFixed(2)}</td>
               </tr>
               <tr>
                 <td className="footer-label footer-pink">VAT @5%</td>
                 <td className="footer-value footer-pink">{totalVat.toFixed(2)}</td>
               </tr>
               <tr>
-                <td className="footer-label">Discount</td>
-                <td className="footer-value">{invoiceDetails.discount?Number(invoiceDetails.discount).toFixed(2):""}</td>
+                <td className="footer-label footer-pink">Discount</td>
+                <td className="footer-value footer-pink">{invoiceDetails.discount?Number(invoiceDetails.discount).toFixed(2):""}</td>
               </tr>
               <tr>
                 <td className="footer-label footer-pink">G. total</td>
@@ -305,8 +311,6 @@ const StaffDashboard = () => {
               </tr>
               <tr>
                 <td className="footer-total-dhs">Total Dhs. <strong>{grandTotal.toFixed(2)}</strong></td>
-                <td className="footer-label">Discount</td>
-                <td className="footer-value"></td>
               </tr>
             </tbody>
           </table>

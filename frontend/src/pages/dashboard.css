@@ -530,82 +530,84 @@
   }
 
   .brand-strip {
-    width: 16mm; min-height: 297mm; background: #fff;
-    border-right: 1.5px solid #edb9c7;
-    display: flex; flex-direction: column;
-    justify-content: space-around; align-items: center;
-    padding: 8mm 0; flex-shrink: 0;
+    width: 24mm; min-height: 297mm; background: #fff;
+    border-right: 1px solid #aaa;
+    display: flex; align-items: stretch; justify-content: stretch;
+    padding: 0; flex-shrink: 0; overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  .brand-strip span {
-    writing-mode: vertical-rl; transform: rotate(180deg);
-    font-size: 7.5pt; font-weight: 900; color: #e0507a;
-    letter-spacing: 0.5px; white-space: nowrap;
+  .brand-strip-img {
+    width: 100%; height: 297mm;
+    object-fit: cover; display: block;
   }
 
-  .inv-body { flex: 1; padding: 6mm 7mm 5mm 6mm; display: flex; flex-direction: column; }
+  .inv-body { flex: 1; padding: 5mm 8mm 5mm 7mm; display: flex; flex-direction: column; }
 
   .inv-header {
-    display: flex; align-items: flex-start; gap: 8mm;
-    padding-bottom: 4mm; border-bottom: 2px solid #c00026; margin-bottom: 2mm;
+    display: flex; align-items: flex-start; gap: 7mm;
+    padding-bottom: 2mm; border-bottom: 0; margin-bottom: 1mm;
   }
-  .inv-logo-block { display: flex; flex-direction: column; align-items: center; min-width: 30mm; }
-  .inv-logo { width: 28mm; height: 28mm; object-fit: contain; }
+  .inv-logo-block { display: flex; flex-direction: column; align-items: center; min-width: 27mm; }
+  .inv-logo { width: 25mm; height: 25mm; object-fit: contain; }
   .logo-sub { font-size: 6.5pt; font-weight: 700; color: #555; text-align: center; margin-top: 1mm; line-height: 1.3; }
 
   .inv-company-info { flex: 1; text-align: right; direction: rtl; }
-  .company-arabic-name { font-size: 13pt; font-weight: 900; color: #c00026; margin-bottom: 1.5mm; letter-spacing: 0.5px; }
-  .company-details-line { font-size: 7pt; color: #333; margin-bottom: 1mm; direction: ltr; text-align: right; }
+  .company-arabic-name { font-size: 13pt; font-weight: 900; color: #111; margin-bottom: 1mm; letter-spacing: 0.5px; }
+  .company-details-line { font-size: 6.8pt; color: #222; margin-bottom: 0.7mm; direction: ltr; text-align: right; }
 
-  .inv-title-row { display: flex; justify-content: center; align-items: center; gap: 12mm; margin: 3mm 0 2mm; }
-  .inv-title-arabic { font-size: 13pt; font-weight: 700; color: #c00026; direction: rtl; }
-  .inv-title-eng { font-size: 13pt; font-weight: 900; color: #000; letter-spacing: 1px; }
+  .inv-title-row { display: flex; justify-content: center; align-items: center; gap: 12mm; margin: 1mm 0 2mm; }
+  .inv-title-arabic { font-size: 12pt; font-weight: 700; color: #c00026; direction: rtl; }
+  .inv-title-eng { font-size: 12pt; font-weight: 900; color: #c00026; letter-spacing: 0; }
 
   .trn-row {
     display: flex; justify-content: space-between; align-items: center;
-    border: 1px solid #aaa; padding: 2.5mm 3mm; margin-bottom: 2mm;
-    font-size: 8.5pt; font-weight: 700;
+    border: 1px solid #777; padding: 0; margin-bottom: 2mm;
+    font-size: 8pt; font-weight: 700; background-color: #fce4ec !important;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  .trn-left { font-weight: 700; }
-  .trn-right { display: flex; align-items: center; gap: 3mm; }
+  .trn-left { font-weight: 700; padding: 2mm 3mm; width: 34%; }
+  .trn-right { display: flex; align-items: stretch; gap: 0; width: 66%; background-color: #fce4ec !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .trn-label { font-weight: 700; }
-  .trn-boxes { display: flex; gap: 1px; }
-  .trn-box { width: 5.5mm; height: 5.5mm; border: 1px solid #aaa; display: flex; align-items: center; justify-content: center; font-size: 8pt; }
+  .trn-right .trn-label { display: flex; align-items: center; justify-content: center; width: 29mm; border-left: 1px solid #777; border-right: 1px solid #777; }
+  .trn-boxes { display: flex; flex: 1; }
+  .trn-box { flex: 1; min-width: 0; height: 9mm; border-right: 1px solid #777; display: flex; align-items: center; justify-content: center; font-size: 8pt; }
 
-  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 2mm; }
-  .info-cell  { border: 1px solid #aaa; padding: 2mm 3mm; font-size: 8.5pt; vertical-align: middle; }
+  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 4mm; }
+  .info-cell  { border: 1px solid #777; padding: 1.3mm 2mm; font-size: 8pt; vertical-align: middle; height: 7mm; }
 
-  .ref-table { width: 100%; border-collapse: collapse; margin-bottom: 3mm; }
-  .ref-cell  { border: 1px solid #aaa; padding: 2mm 3mm; width: 33.33%; font-size: 8.5pt; }
+  .ref-table { width: 100%; border-collapse: collapse; margin: 2mm 0 7mm; border-top: 2px solid #111; }
+  .ref-cell  { border: 1px solid #777; padding: 1.6mm 2mm; width: 33.33%; font-size: 8pt; height: 7mm; }
 
   .items-table { width: 100%; border-collapse: collapse; margin-bottom: 0; }
-  .items-header { background-color: #f8c8d8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .items-table th, .items-table td { border: 1px solid #aaa; padding: 1.8mm 2mm; text-align: center; font-size: 8pt; vertical-align: middle; }
-  .items-table th { font-weight: 700; font-size: 7.5pt; line-height: 1.3; }
+  .items-header th { background-color: #f7cfe0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .items-table th, .items-table td { border: 1px solid #777; padding: 1.2mm 1.5mm; text-align: center; font-size: 8pt; vertical-align: middle; }
+  .items-table th { font-weight: 700; font-size: 7.3pt; line-height: 1.2; height: 10mm; }
 
-  .col-no          { width: 8mm; }
+  .col-no          { width: 10mm; }
   .col-particulars { width: auto; }
   .col-qty         { width: 12mm; }
-  .col-rate        { width: 18mm; }
+  .col-rate        { width: 19mm; }
   .col-vat         { width: 18mm; }
-  .col-total       { width: 22mm; }
+  .col-total       { width: 27mm; }
+  .items-table td.col-total { background-color: #f7cfe0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .text-left { text-align: left !important; padding-left: 2mm; }
 
-  .row-pink { background-color: #fce4ec !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .row-pink { background-color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .empty-row td { height: 7mm; }
 
   .footer-table { width: 100%; border-collapse: collapse; margin-top: 0; }
-  .footer-left  { border: 1px solid #aaa; padding: 2mm 3mm; font-size: 8.5pt; vertical-align: top; width: 60%; }
+  .footer-left  { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; vertical-align: top; width: 60%; }
   .note-line    { font-size: 8.5pt; min-height: 8mm; }
-  .footer-label { border: 1px solid #aaa; padding: 2mm 3mm; font-size: 8.5pt; width: 25%; font-weight: 600; }
-  .footer-value { border: 1px solid #aaa; padding: 2mm 3mm; font-size: 8.5pt; width: 15%; text-align: right; }
-  .footer-pink  { background-color: #fce4ec !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .footer-total-dhs { border: 1px solid #aaa; padding: 2mm 3mm; font-size: 8.5pt; font-weight: 700; }
+  .footer-label { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; width: 23%; font-weight: 600; }
+  .footer-value { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; width: 17%; text-align: right; }
+  .footer-pink  { background-color: #f7cfe0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .footer-total-dhs { border: 1px solid #777; padding: 1.6mm 2mm; font-size: 8pt; font-weight: 700; }
 
-  .payment-row { display: flex; align-items: center; gap: 14mm; margin-top: 3mm; font-size: 8.5pt; justify-content: center; }
+  .payment-row { display: flex; align-items: center; gap: 17mm; margin-top: 1.5mm; font-size: 8pt; justify-content: center; }
   .payment-desc-label { font-weight: 700; }
   .payment-opt { display: flex; align-items: center; gap: 2mm; font-size: 8.5pt; }
   .checkbox-box { display: inline-flex; align-items: center; justify-content: center; width: 4mm; height: 4mm; border: 1px solid #000; font-size: 7pt; margin-left: 1mm; }
-  .signature-row { display: flex; justify-content: space-between; margin-top: 4mm; font-size: 8.5pt; font-weight: 600; }
+  .signature-row { display: flex; justify-content: space-between; margin-top: 4mm; font-size: 8pt; font-weight: 600; }
 }
 
 /* ══════════════════════════════════════════════

@@ -1,0 +1,250 @@
+.stock-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr) minmax(220px, 0.75fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.stock-card {
+  margin-bottom: 0;
+  min-height: 346px;
+}
+
+.stock-card-title,
+.stock-history-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.stock-card-title h3,
+.stock-history-heading h3 {
+  color: #c00026;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.stock-card-icon,
+.stock-history-heading span {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stock-card-icon.add {
+  background: #fff0f2;
+  color: #c00026;
+}
+
+.stock-card-icon.reduce {
+  background: #fff8ed;
+  color: #d4820a;
+}
+
+.stock-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stock-form .form-group select {
+  padding: 9px 10px;
+  border: 1.5px solid #e8e0e2;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #333;
+  background: #fdfcfc;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.stock-form .form-group select:focus {
+  border-color: #edb9c7;
+  box-shadow: 0 0 0 3px rgba(237,185,199,0.2);
+}
+
+.stock-current-box {
+  background: #fff0f2;
+  border: 1px solid #f5c0c8;
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.stock-current-box span {
+  color: #8a6f76;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stock-current-box strong {
+  color: #c00026;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.stock-update-btn {
+  justify-content: center;
+  width: 100%;
+}
+
+.stock-update-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.stock-spin {
+  animation: stock-spin 0.8s linear infinite;
+}
+
+@keyframes stock-spin {
+  to { transform: rotate(360deg); }
+}
+
+.stock-message {
+  border-radius: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 9px 11px;
+  line-height: 1.35;
+}
+
+.stock-message.success {
+  background: #f0fff6;
+  color: #2a7d4f;
+  border: 1px solid #c8efd9;
+}
+
+.stock-message.error {
+  background: #fff5f5;
+  color: #c00026;
+  border: 1px solid #f5c0c8;
+}
+
+.stock-history-panel {
+  position: sticky;
+  top: 22px;
+  background: #fffaf2;
+  border: 1px solid #f1d6b6;
+  border-radius: 10px 10px 18px 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  padding: 18px 16px 16px;
+}
+
+.stock-history-panel::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, rgba(237,185,199,0), rgba(237,185,199,0.45));
+  border-radius: 12px 0 18px 0;
+}
+
+.stock-history-heading {
+  margin-bottom: 14px;
+}
+
+.stock-history-heading span {
+  background: #fce4ec;
+  color: #c00026;
+}
+
+.stock-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-height: 460px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.stock-note {
+  background: #fff;
+  border: 1px solid #f0dfe4;
+  border-left: 4px solid #edb9c7;
+  border-radius: 8px;
+  padding: 10px 10px 9px;
+  box-shadow: 0 2px 8px rgba(192,0,38,0.04);
+}
+
+.stock-note-main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  color: #555;
+  font-size: 12.5px;
+}
+
+.stock-note-main strong {
+  color: #333;
+  font-weight: 700;
+}
+
+.stock-note-main em {
+  color: #9a8a8e;
+  font-size: 11.5px;
+  font-style: normal;
+  margin-left: auto;
+}
+
+.stock-note-product {
+  color: #a0878e;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stock-plus {
+  color: #2a7d4f;
+  font-weight: 700;
+}
+
+.stock-minus {
+  color: #c00026;
+  font-weight: 700;
+}
+
+.stock-history-empty {
+  color: #9a8a8e;
+  font-size: 12.5px;
+  line-height: 1.5;
+  padding: 8px 2px;
+}
+
+@media (max-width: 1100px) {
+  .stock-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stock-history-panel {
+    grid-column: 1 / -1;
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .stock-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-card {
+    min-height: auto;
+  }
+}
