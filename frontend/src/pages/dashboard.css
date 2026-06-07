@@ -608,7 +608,7 @@
   .payment-desc-label { font-weight: 700; }
   .payment-opt { display: flex; align-items: center; gap: 2mm; font-size: 8.5pt; }
   .checkbox-box { display: inline-flex; align-items: center; justify-content: center; width: 4mm; height: 4mm; border: 1px solid #000; font-size: 7pt; margin-left: 1mm; }
-  .signature-row { display: flex; justify-content: space-between; margin-top: 4mm; font-size: 8pt; font-weight: 600; }
+  .signature-row { display: flex; justify-content: space-between; margin-top: 12mm; font-size: 8pt; font-weight: 600; }
 }
 
 /* ══════════════════════════════════════════════
